@@ -1,0 +1,13 @@
+*.o
+*o.obj
+*.lib
+*.so
+*.dll
+*.a
+*.exe
+a.out
+*.out
+build/*
+core
+make.log
+*stackdump
