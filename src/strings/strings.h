@@ -1,6 +1,8 @@
 #ifndef TOOLS_STRINGS_H
 #define TOOLS_STRINGS_H
 
+char replace(char** string, char needle, char replacement);
+
 // Takes in a string to split, a delimiter to split by, and stores the result in
 //  the buffer parameter
 //
