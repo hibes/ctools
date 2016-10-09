@@ -1,6 +1,8 @@
 #ifndef TOOLS_STRINGS_H
 #define TOOLS_STRINGS_H
 
+char replace(char** string, char needle, char replacement);
+
 // Takes in a string to split, a delimiter to split by, and stores the result in
 //  the buffer parameter
 //
@@ -24,7 +26,7 @@
 char split_string(char* string, char* delimiter, char*** buffer_arg);
 
 // Reads all available data from stdin and stores it in string up to max_length
-// 
+//
 // This will malloc for you.
 //
 // Example usage:
@@ -33,7 +35,7 @@ char split_string(char* string, char* delimiter, char*** buffer_arg);
 //
 // read_all_stdin(&string, 65535);
 //
-// Returns 
+// Returns
 //  0:        Success
 //  Non-zero: Failure
 char read_all_stdin(char** string, long max_length);

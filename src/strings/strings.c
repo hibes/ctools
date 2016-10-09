@@ -6,6 +6,23 @@
 // My strings library
 #include "strings.h"
 
+char replace(char** string, char needle, char replacement) {
+  int i;
+
+  if (string == 0 || *string == 0) {
+    return 1;
+  }
+
+  for (i = 0; i < strlen(*string); ++i) {
+    //fprintf(stderr, "Dereferencing the string %s %d?\n", *string + i, strlen(*string));
+    if (*string[i] == needle) {
+      *string[i] = replacement;
+    }
+  }
+
+  return 0;
+}
+
 char split_string(char* string, char* delimiter, char*** buffer_arg) {
   long string_length = strlen(string);
   long delimiter_length = strlen(delimiter);
@@ -91,7 +108,7 @@ char read_all_stdin(char** string, long max_length) {
     if (total_bytes_read > total_bytes_allocated) {
       // Double the allocation up to max_length
       total_bytes_allocated *= 2;
-      
+
       if (total_bytes_allocated > max_length) {
         total_bytes_allocated = max_length;
       }
