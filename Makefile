@@ -24,14 +24,12 @@ TEST_SCRIPT=echo Make a test script!
 # .c files
 STRINGS_C=$(SRC)/strings/strings.c
 SPLIT_STRING_C=$(SRC)/strings/split_string/main.c
-DEVTRACKER_C=$(SRC)/ac/devtracker/main.c
 
 # .o files
 STRINGS_O=$(OBJ_OUT)/strings.o
 
 # $(EXE) files
 SPLIT_STRING_BIN=$(EXE_OUT)/split_string$(EXE)
-DEVTRACKER_BIN=$(EXE_OUT)/devtracker$(EXE)
 
 DEP=mkdirs
 
@@ -46,7 +44,7 @@ mkdirs:
 	$(MKDIR) -p $(TESTS_OUT)
 	$(MKDIR) -p $(HOME_BIN)
 
-bins: $(DEP) lib_strings split_string devtracker
+bins: $(DEP) lib_strings split_string
 
 split_string: $(DEP) strings.o
 	$(CC) $(CFLAGS) $(INCLUDE_DIRS) $(STRINGS_O) $(SPLIT_STRING_C) \
@@ -54,10 +52,6 @@ split_string: $(DEP) strings.o
 
 lib_strings: $(DEP) strings.o
 	ar rcs build/lib_strings$(LIB) $(STRINGS_O)
-
-devtracker: $(DEP)
-	$(CC) $(CFLAGS) $(INCLUDE_DIRS) $(STRINGS_O) $(DEVTRACKER_C) \
-		-L/usr/lib -ltidy -lcurl.dll -o $(DEVTRACKER_BIN)
 
 strings.o: $(DEP)
 	$(CC) $(CFLAGS) $(STATIC) -c $(STRINGS_C) -o $(STRINGS_O)
