@@ -10,9 +10,9 @@
 void usage();
 
 // Takes in a string of characters from stdin, using a (currently hard-coded)
-//  delimiter, and outputs a stream of characters separated by the 
+//  delimiter, and outputs a stream of characters separated by the
 //  RS (record separator) 0x1E character code
-//  characters delimited 
+//  characters delimited
 // Returns
 // * 0:         Success
 // * Non-zero:  Failure
@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 
   if (read_all_stdin(&ibuffer, 0) || ibuffer == 0) {
     fprintf(stderr, "Failed read_all_stdin\n");
-    
+
     return 1;
   }
 
@@ -86,10 +86,10 @@ int main(int argc, char** argv) {
 }
 
 void usage(char** argv) {
-  fprintf(stderr, 
+  fprintf(stderr,
       "%s: Usage\n\n", argv[0]);
-  fprintf(stderr, 
+  fprintf(stderr,
       "\t--delim=$ARG\t-d $ARG \tSpecify delimiter argument (required)\n");
-  fprintf(stderr, 
+  fprintf(stderr,
       "\t--help      \t-h      \tPrint this help\n");
 }

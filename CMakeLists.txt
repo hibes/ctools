@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(hibes_tools)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/CMakeModules)
+
+find_package(Check REQUIRED)
+
+include_directories(${CHECK_INCLUDE_DIRS})
+set(LIBS ${LIBS} ${CHECK_LIBRARIES})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+
+MESSAGE("CMAKE_BINARY_DIR: " ${CMAKE_BINARY_DIR})
+MESSAGE("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+set(CMAKE_INCLUDE_PATH
+	${PROJECT_SOURCE_DIR}/src/signals/include
+	${PROJECT_SOURCE_DIR}/src/strings/include
+	)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(${PROJECT_SOURCE_DIR}/test)

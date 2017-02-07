@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 // My strings library
-#include "strings.h"
+#include "strings_util.h"
 
 char replace(char** string, char needle, char replacement) {
   int i;

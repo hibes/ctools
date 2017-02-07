@@ -1,0 +1,2 @@
+add_subdirectory(test_signals)
+add_subdirectory(test_splitstring)

@@ -1,0 +1,25 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "scripts/build.sh",
+    "clean": "scripts/clean.sh",
+    "rebuild": "scripts/rebuild.sh",
+    "test": "scripts/test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Ibes/tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Ibes/tools/issues"
+  },
+  "homepage": "https://gitlab.com/Ibes/tools#README"
+}
