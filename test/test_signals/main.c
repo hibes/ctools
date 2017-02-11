@@ -1,7 +1,7 @@
 #include <check.h>
-#include "signals_util.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "signals_util.h"
 
 START_TEST(verify_catch_sigsegv)
 {
