@@ -13,6 +13,8 @@ if [[ "${RTRN}" == "" ]]; then
 fi
 
 main() {
+  init
+
   mkdir -p ${CMAKE_DIR}
 
   pushd ${CMAKE_DIR}
