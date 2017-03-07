@@ -12,11 +12,12 @@ main() {
   if is_linux; then
     err "TODO: Implement me"
   elif is_macos; then
-    FILES=$(get_files)
-    fswatch -0 ${FILES} | while read -d "" event; do \
-      err "Detected a change in file ${event}.\n\n"
-      npm run build
+    while true; do
       FILES=$(get_files)
+      fswatch -1 ${FILES} | while read -d "" event; do \
+        err "Detected a change in file ${event}.\n\n"
+        npm run build
+      done
     done
   fi
 }
